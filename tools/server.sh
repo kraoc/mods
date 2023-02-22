@@ -121,6 +121,7 @@ DisplayModules
 
 echo
 echo   - Fabric Mods Mount: $FabricFolder
+echo
 
 sleep 30
 exit 0
