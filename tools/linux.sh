@@ -115,6 +115,7 @@ DisplayHeader
 echo   - Resumé des modules installés
 echo
 DisplayModules
+echo
 
 sleep 30
 exit 0
