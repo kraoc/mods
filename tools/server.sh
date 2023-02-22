@@ -80,6 +80,7 @@ function DisplayModules() {
 
 DisplayHeader
 echo   - Mise à jour de Ferium
+echo
 UpdateFerium
 
 # Set execute permissions
@@ -87,6 +88,7 @@ chmod +x tools/ferium >/dev/null 2>&1
 
 DisplayHeader
 echo   - Mise à jour des informations
+echo
 UpdateDatas
 MinecraftVersion=$(cat datas/version.txt)
 
@@ -104,16 +106,20 @@ fi
 
 DisplayHeader
 echo   - Préparation des modules
+echo
 PrepareModules
 
 DisplayHeader
 echo   - Installation, ou mise à jour, des modules
+echo
 InstallModules
 
 DisplayHeader
 echo   - Resumé des modules installés
+echo
 DisplayModules
 
+echo
 echo   - Fabric Mods Mount: $FabricFolder
 
 sleep 30
