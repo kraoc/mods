@@ -85,9 +85,9 @@ REM Update all versions and modules datas
     mkdir datas > nul 2>&1
     cd datas\
         del datas.zip > nul 2>&1
-		powershell.exe -ExecutionPolicy Unrestricted -WindowStyle Maximized -Command 'wget -Headers @{"Cache-Control"="no-cache"} $ListVersion -o version.txt'
-		powershell.exe -ExecutionPolicy Unrestricted -WindowStyle Maximized -Command 'wget -Headers @{"Cache-Control"="no-cache"} $ListModrinth -o modrinth.txt'
-		powershell.exe -ExecutionPolicy Unrestricted -WindowStyle Maximized -Command 'wget -Headers @{"Cache-Control"="no-cache"} $ListCurseforge -o curseforge.txt'
+		powershell.exe -ExecutionPolicy Unrestricted -WindowStyle Maximized -Command "wget -Headers @{'Cache-Control'='no-cache'} $ListVersion -o version.txt"
+		powershell.exe -ExecutionPolicy Unrestricted -WindowStyle Maximized -Command "wget -Headers @{'Cache-Control'='no-cache'} $ListModrinth -o modrinth.txt"
+		powershell.exe -ExecutionPolicy Unrestricted -WindowStyle Maximized -Command "wget -Headers @{'Cache-Control'='no-cache'} $ListCurseforge -o curseforge.txt"
     cd ..
 exit /b 0
 
