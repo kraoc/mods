@@ -52,6 +52,8 @@ REM Script display header
     cls
     echo [Minecraft Zogg]
     echo   - Version %MinecraftVersion%
+    echo.
+    echo.
 exit /b 0
 
 REM Delete already existing profile
