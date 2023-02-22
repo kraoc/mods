@@ -5,10 +5,6 @@ cls
 REM 2023-02-22
 
 MinecraftVersion=Inconnue
-ListVersion=https://github.com/kraoc/mods/raw/main/lists/version.txt
-ListModrinth=https://github.com/kraoc/mods/raw/main/lists/client_modrinth.txt
-ListCurseforge=https://github.com/kraoc/mods/raw/main/lists/client_curseforge.txt
-FeriumApp=https://github.com/kraoc/mods/raw/main/tools/ferium.exe
 
 call :DisplayHeader
 echo   - Mise à jour de Ferium
