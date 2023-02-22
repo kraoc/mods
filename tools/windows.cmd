@@ -28,14 +28,17 @@ if errorlevel 1 (
 
 call :DisplayHeader
 echo   - Préparation des modules
+echo.
 call :PrepareModules
 
 call :DisplayHeader
 echo   - Installation, ou mise à jour, des modules
+echo.
 call :InstallModules
 
 call :DisplayHeader
 echo   - Resumé des modules installés
+echo.
 call :DisplayModules
 
 timeout /t 30
