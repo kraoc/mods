@@ -24,3 +24,4 @@ starlight
 status-effect-bars
 waystones
 yacl
+appleskin
