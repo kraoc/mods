@@ -1,7 +1,7 @@
 #!/bin/bash
 clear
 
-# 2023-02-22
+# 2023-03-01
 
 MinecraftVersion=Inconnue
 ListVersion=https://github.com/kraoc/mods/raw/main/lists/version.txt
@@ -44,6 +44,9 @@ function UpdateDatas() {
     mkdir -p datas >/dev/null 2>&1
     cd datas/
         rm -f datas.zip >/dev/null 2>&1
+        rm -f version.txt >/dev/null 2>&1
+        rm -f modrinth.txt >/dev/null 2>&1
+        rm -f curseforge.txt >/dev/null 2>&1
         wget --header="Cache-Control: no-cache, no-store, must-revalidate" --header="Pragma: no-cache" --header="Expires: 0" --output-document=version.txt --no-clobber --no-dns-cache --inet4-only --no-cache --no-cookies --no-check-certificate --recursive $ListVersion >/dev/null 2>&1
         wget --header="Cache-Control: no-cache, no-store, must-revalidate" --header="Pragma: no-cache" --header="Expires: 0" --output-document=modrinth.txt --no-clobber --no-dns-cache --inet4-only --no-cache --no-cookies --no-check-certificate --recursive $ListModrinth >/dev/null 2>&1
         wget --header="Cache-Control: no-cache, no-store, must-revalidate" --header="Pragma: no-cache" --header="Expires: 0" --output-document=curseforge.txt --no-clobber --no-dns-cache --inet4-only --no-cache --no-cookies --no-check-certificate --recursive $ListCurseforge >/dev/null 2>&1
