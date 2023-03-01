@@ -16,6 +16,7 @@ fabricproxy-lite
 fallingtree
 fastload
 ferrite-core
+gotta-go-fast-fabric
 journeymap
 krypton
 lazydfu
