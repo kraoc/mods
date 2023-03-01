@@ -3,6 +3,7 @@ balm
 bam
 bluemap
 c2me-fabric
+carpet
 chunky
 cloth-config
 collective
