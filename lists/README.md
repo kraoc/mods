@@ -1,4 +1,4 @@
-Mods selection list for:
+# Mods selection list
 
 * Client
 * Server
