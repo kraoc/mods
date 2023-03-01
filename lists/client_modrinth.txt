@@ -1,6 +1,8 @@
 appleskin
 balm
 c2me-fabric
+carpet
+carpet-fixes
 cloth-config
 collective
 crafting-tweaks
