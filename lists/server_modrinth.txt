@@ -4,6 +4,7 @@ bam
 bluemap
 c2me-fabric
 carpet
+carpet-fixes
 chunky
 cloth-config
 collective
