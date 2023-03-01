@@ -3,7 +3,7 @@
 * Client
 * Server
 
-Using following sources:
+_Using following sources:_
 
-* Modrinth
-* Curseforge
+* [Modrinth](https://modrinth.com/mods)
+* [Curseforge](https://www.curseforge.com/minecraft/mc-mods)
