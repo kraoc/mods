@@ -1,6 +1,8 @@
+appleskin
 balm
 bam
 bluemap
+c2me-fabric
 chunky
 cloth-config
 collective
@@ -12,12 +14,14 @@ fabric-api
 fabric-language-kotlin
 fabricproxy-lite
 fallingtree
+fastload
 ferrite-core
 journeymap
 krypton
 lazydfu
 lithium
 log-cleaner
+memoryleakfix
 player-events
 polymer
 replanting-crops
@@ -28,6 +32,6 @@ spark
 starlight
 tree-harvester
 universal-graves
+vmp-fabric
 waystones
 yacl
-appleskin
