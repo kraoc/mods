@@ -2,7 +2,7 @@
 chcp 65001
 cls
 
-REM 2023-02-22
+REM 2023-03-01
 
 MinecraftVersion=Inconnue
 
@@ -75,7 +75,7 @@ REM Update Ferium
     mkdir tools > nul 2>&1
     cd tools\
         del ferium.exe > nul 2>&1
-	powershell.exe -Command "$ProgressPreference='SilentlyContinue'; Invoke-WebRequest -DisableKeepAlive -Headers @{'Cache-Control'='no-cache, no-store, must-revalidate'; 'Pragma'='no-cache'; 'Expires'='0'} https://github.com/kraoc/mods/raw/main/tools/ferium.exe -o ferium.exe"
+	powershell.exe -Command "$ProgressPreference='SilentlyContinue'; Invoke-WebRequest -DisableKeepAlive -Headers @{'Cache-Control'='no-cache, no-store, max-age=0, must-revalidate'; 'Pragma'='no-cache'; 'Expires'='-1'} https://github.com/kraoc/mods/raw/main/tools/ferium.exe -o ferium.exe"
     cd ..
 exit /b 0
 
@@ -84,9 +84,9 @@ REM Update all versions and modules datas
     mkdir datas > nul 2>&1
     cd datas\
         del datas.zip > nul 2>&1
-	powershell.exe -Command "$ProgressPreference='SilentlyContinue'; Invoke-WebRequest -DisableKeepAlive -Headers @{'Cache-Control'='no-cache, no-store, must-revalidate'; 'Pragma'='no-cache'; 'Expires'='0'} https://github.com/kraoc/mods/raw/main/lists/version.txt -o version.txt"
-	powershell.exe -Command "$ProgressPreference='SilentlyContinue'; Invoke-WebRequest -DisableKeepAlive -Headers @{'Cache-Control'='no-cache, no-store, must-revalidate'; 'Pragma'='no-cache'; 'Expires'='0'} https://github.com/kraoc/mods/raw/main/lists/client_modrinth.txt -o modrinth.txt"
-	powershell.exe -Command "$ProgressPreference='SilentlyContinue'; Invoke-WebRequest -DisableKeepAlive -Headers @{'Cache-Control'='no-cache, no-store, must-revalidate'; 'Pragma'='no-cache'; 'Expires'='0'} https://github.com/kraoc/mods/raw/main/lists/client_curseforge.txt -o curseforge.txt"
+	powershell.exe -Command "$ProgressPreference='SilentlyContinue'; Invoke-WebRequest -DisableKeepAlive -Headers @{'Cache-Control'='no-cache, no-store, max-age=0, must-revalidate'; 'Pragma'='no-cache'; 'Expires'='-1'} https://github.com/kraoc/mods/raw/main/lists/version.txt -o version.txt"
+	powershell.exe -Command "$ProgressPreference='SilentlyContinue'; Invoke-WebRequest -DisableKeepAlive -Headers @{'Cache-Control'='no-cache, no-store, max-age=0, must-revalidate'; 'Pragma'='no-cache'; 'Expires'='-1'} https://github.com/kraoc/mods/raw/main/lists/client_modrinth.txt -o modrinth.txt"
+	powershell.exe -Command "$ProgressPreference='SilentlyContinue'; Invoke-WebRequest -DisableKeepAlive -Headers @{'Cache-Control'='no-cache, no-store, max-age=0, must-revalidate'; 'Pragma'='no-cache'; 'Expires'='-1'} https://github.com/kraoc/mods/raw/main/lists/client_curseforge.txt -o curseforge.txt"
     cd ..
 exit /b 0
 
