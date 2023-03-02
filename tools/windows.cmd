@@ -73,7 +73,8 @@ exit /b 0
 REM Download a remote file
 :DownloadRemoteFile
     del %~2 > nul 2>&1
-	powershell.exe -Command "$ProgressPreference='SilentlyContinue'; Invoke-WebRequest -DisableKeepAlive -Headers @{'Cache-Control'='no-cache, no-store, max-age=0, must-revalidate'; 'Pragma'='no-cache'; 'Expires'='-1'} %~1 -o %~2"
+	echo powershell.exe -Command "$ProgressPreference='SilentlyContinue'; Invoke-WebRequest -DisableKeepAlive -Headers @{'Cache-Control'='no-cache, no-store, max-age=0, must-revalidate'; 'Pragma'='no-cache'; 'Expires'='-1'} %~1 -o %~2"
+	pause
 exit /b 0
 
 REM Update Ferium
