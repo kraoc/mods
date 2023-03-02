@@ -30,12 +30,19 @@ function CreateProfile() {
     tools/ferium profile configure
 }
 
+# Download Remote File
+function DownloadRemoteFile() {
+    rm -f $2 >/dev/null 2>&1
+    wget --header="Cache-Control: no-cache, no-store, max-age=0, must-revalidate" --header="Pragma: no-cache" --header="Expires: -1" --output-document=$2 --no-clobber --no-dns-cache --inet4-only --no-cache --no-cookies --no-check-certificate --recursive $1 >/dev/null 2>&1
+}
+
 # Update Ferium
 function UpdateFerium() {
     mkdir -p tools >/dev/null 2>&1
     cd tools/
-        rm -f ferium >/dev/null 2>&1
-        wget --header="Cache-Control: no-cache, no-store, max-age=0, must-revalidate" --header="Pragma: no-cache" --header="Expires: -1" --output-document=ferium --no-clobber --no-dns-cache --inet4-only --no-cache --no-cookies --no-check-certificate --recursive $FeriumApp >/dev/null 2>&1
+        #rm -f ferium >/dev/null 2>&1
+        #wget --header="Cache-Control: no-cache, no-store, max-age=0, must-revalidate" --header="Pragma: no-cache" --header="Expires: -1" --output-document=ferium --no-clobber --no-dns-cache --inet4-only --no-cache --no-cookies --no-check-certificate --recursive $FeriumApp >/dev/null 2>&1
+        DownloadRemoteFile $FeriumApp ferium
     cd ..
 }
 
@@ -44,12 +51,15 @@ function UpdateDatas() {
     mkdir -p datas >/dev/null 2>&1
     cd datas/
         rm -f datas.zip >/dev/null 2>&1
-        rm -f version.txt >/dev/null 2>&1
-        rm -f modrinth.txt >/dev/null 2>&1
-        rm -f curseforge.txt >/dev/null 2>&1
-        wget --header="Cache-Control: no-cache, no-store, max-age=0, must-revalidate" --header="Pragma: no-cache" --header="Expires: -1" --output-document=version.txt --no-clobber --no-dns-cache --inet4-only --no-cache --no-cookies --no-check-certificate --recursive $ListVersion >/dev/null 2>&1
-        wget --header="Cache-Control: no-cache, no-store, max-age=0, must-revalidate" --header="Pragma: no-cache" --header="Expires: -1" --output-document=modrinth.txt --no-clobber --no-dns-cache --inet4-only --no-cache --no-cookies --no-check-certificate --recursive $ListModrinth >/dev/null 2>&1
-        wget --header="Cache-Control: no-cache, no-store, max-age=0, must-revalidate" --header="Pragma: no-cache" --header="Expires: -1" --output-document=curseforge.txt --no-clobber --no-dns-cache --inet4-only --no-cache --no-cookies --no-check-certificate --recursive $ListCurseforge >/dev/null 2>&1
+        #rm -f version.txt >/dev/null 2>&1
+        #rm -f modrinth.txt >/dev/null 2>&1
+        #rm -f curseforge.txt >/dev/null 2>&1
+        #wget --header="Cache-Control: no-cache, no-store, max-age=0, must-revalidate" --header="Pragma: no-cache" --header="Expires: -1" --output-document=version.txt --no-clobber --no-dns-cache --inet4-only --no-cache --no-cookies --no-check-certificate --recursive $ListVersion >/dev/null 2>&1
+        #wget --header="Cache-Control: no-cache, no-store, max-age=0, must-revalidate" --header="Pragma: no-cache" --header="Expires: -1" --output-document=modrinth.txt --no-clobber --no-dns-cache --inet4-only --no-cache --no-cookies --no-check-certificate --recursive $ListModrinth >/dev/null 2>&1
+        #wget --header="Cache-Control: no-cache, no-store, max-age=0, must-revalidate" --header="Pragma: no-cache" --header="Expires: -1" --output-document=curseforge.txt --no-clobber --no-dns-cache --inet4-only --no-cache --no-cookies --no-check-certificate --recursive $ListCurseforge >/dev/null 2>&1
+        DownloadRemoteFile $ListVersion version.txt
+        DownloadRemoteFile $ListModrinth modrinth.txt
+        DownloadRemoteFile $ListCurseforge curseforge.txt
     cd ..
 }
 
