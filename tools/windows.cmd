@@ -89,9 +89,9 @@ REM Update all versions and modules datas
     mkdir datas > nul 2>&1
     cd datas\
         del datas.zip > nul 2>&1
-        call :DownloadRemoteFile https://github.com/kraoc/mods/raw/main/tools/version.txt version.txt
-        call :DownloadRemoteFile https://github.com/kraoc/mods/raw/main/tools/client_modrinth.txt modrinth.txt
-        call :DownloadRemoteFile https://github.com/kraoc/mods/raw/main/tools/client_curseforge.txt curseforge.txt
+        call :DownloadRemoteFile https://github.com/kraoc/mods/raw/main/lists/version.txt version.txt
+        call :DownloadRemoteFile https://github.com/kraoc/mods/raw/main/lists/client_modrinth.txt modrinth.txt
+        call :DownloadRemoteFile https://github.com/kraoc/mods/raw/main/lists/client_curseforge.txt curseforge.txt
     cd ..
 exit /b 0
 
