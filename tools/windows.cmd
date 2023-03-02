@@ -2,7 +2,7 @@
 chcp 65001
 cls
 
-REM 2023-03-02-006
+REM 2023-03-02
 
 MinecraftVersion=Inconnue
 
@@ -80,8 +80,6 @@ REM Update Ferium
 :UpdateFerium
     mkdir tools > nul 2>&1
     cd tools\
-        REM del ferium.exe > nul 2>&1
-        REM powershell.exe -Command "$ProgressPreference='SilentlyContinue'; Invoke-WebRequest -DisableKeepAlive -Headers @{'Cache-Control'='no-cache, no-store, max-age=0, must-revalidate'; 'Pragma'='no-cache'; 'Expires'='-1'} https://github.com/kraoc/mods/raw/main/tools/ferium.exe -o ferium.exe"
         call :DownloadRemoteFile https://github.com/kraoc/mods/raw/main/tools/ferium.exe ferium.exe
     cd ..
 exit /b 0
@@ -91,9 +89,6 @@ REM Update all versions and modules datas
     mkdir datas > nul 2>&1
     cd datas\
         del datas.zip > nul 2>&1
-        REM powershell.exe -Command "$ProgressPreference='SilentlyContinue'; Invoke-WebRequest -DisableKeepAlive -Headers @{'Cache-Control'='no-cache, no-store, max-age=0, must-revalidate'; 'Pragma'='no-cache'; 'Expires'='-1'} https://github.com/kraoc/mods/raw/main/lists/version.txt -o version.txt"
-        REM powershell.exe -Command "$ProgressPreference='SilentlyContinue'; Invoke-WebRequest -DisableKeepAlive -Headers @{'Cache-Control'='no-cache, no-store, max-age=0, must-revalidate'; 'Pragma'='no-cache'; 'Expires'='-1'} https://github.com/kraoc/mods/raw/main/lists/client_modrinth.txt -o modrinth.txt"
-        REM powershell.exe -Command "$ProgressPreference='SilentlyContinue'; Invoke-WebRequest -DisableKeepAlive -Headers @{'Cache-Control'='no-cache, no-store, max-age=0, must-revalidate'; 'Pragma'='no-cache'; 'Expires'='-1'} https://github.com/kraoc/mods/raw/main/lists/client_curseforge.txt -o curseforge.txt"
         call :DownloadRemoteFile https://github.com/kraoc/mods/raw/main/tools/version.txt version.txt
         call :DownloadRemoteFile https://github.com/kraoc/mods/raw/main/tools/client_modrinth.txt modrinth.txt
         call :DownloadRemoteFile https://github.com/kraoc/mods/raw/main/tools/client_curseforge.txt curseforge.txt
