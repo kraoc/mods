@@ -1,7 +1,7 @@
 #!/bin/bash
 clear
 
-# 2023-03-01
+# 2023-03-02
 
 MinecraftVersion=Inconnue
 ListVersion=https://github.com/kraoc/mods/raw/main/lists/version.txt
@@ -35,7 +35,7 @@ function UpdateFerium() {
     mkdir -p tools >/dev/null 2>&1
     cd tools/
         rm -f ferium >/dev/null 2>&1
-        wget --header="Cache-Control: no-cache, no-store, max-age=0, must-revalidate" --header="Pragma: no-cache" --header="Expires: 0" --output-document=ferium --no-clobber --no-dns-cache --inet4-only --no-cache --no-cookies --no-check-certificate --recursive $FeriumApp >/dev/null 2>&1
+        wget --header="Cache-Control: no-cache, no-store, max-age=0, must-revalidate" --header="Pragma: no-cache" --header="Expires: -1" --output-document=ferium --no-clobber --no-dns-cache --inet4-only --no-cache --no-cookies --no-check-certificate --recursive $FeriumApp >/dev/null 2>&1
     cd ..
 }
 
