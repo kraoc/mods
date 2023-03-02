@@ -2,7 +2,7 @@
 chcp 65001
 cls
 
-REM 2023-03-02-005
+REM 2023-03-02-006
 
 MinecraftVersion=Inconnue
 
