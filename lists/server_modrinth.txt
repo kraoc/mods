@@ -3,6 +3,7 @@ auditory
 balm
 bam
 bluemap
+bmarker
 c2me-fabric
 carpet
 carpet-fixes
@@ -11,7 +12,10 @@ cloth-config
 collective
 commandaliases
 crafting-tweaks
+debugify
 double-doors
+entity-view-distance
+essentialaddons
 essential-commands
 fabric-api
 fabric-language-kotlin
@@ -19,7 +23,9 @@ fabricproxy-lite
 fallingtree
 fastload
 ferrite-core
+fish-on-the-line
 gotta-go-fast-fabric
+inventory-totem
 journeymap
 krypton
 lazydfu
