@@ -9,7 +9,6 @@ collective
 continuity
 crafting-tweaks
 debugify
-distanthorizons
 ebe
 entityculling
 entity-view-distance
