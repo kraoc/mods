@@ -33,6 +33,7 @@ log-cleaner
 memoryleakfix
 player-events
 polymer
+quickshulker
 replanting-crops
 rightclickharvest
 servercore
