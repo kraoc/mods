@@ -3,5 +3,14 @@
     "owner": "Zogg",
     "game": "Minecraft",
     "version": "1.19.3"
+  },
+  "client": {
+    "modules": {
+      "AppleSkin": {
+        "type": "modrinth",
+        "tag": "appleskin",
+        "url": "https://cdn.modrinth.com/data/EsAfCjCV/versions/ntsDU1AP/appleskin-fabric-mc1.19.3-2.4.2.jar"
+      }
+    }
   }
 }
