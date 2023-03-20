@@ -12,6 +12,324 @@
         "type": "modrinth",
         "tag": "appleskin",
         "url": "https://cdn.modrinth.com/data/EsAfCjCV/versions/ntsDU1AP/appleskin-fabric-mc1.19.3-2.4.2.jar"
+      },
+      {
+        "name": "Auditory",
+        "type": "modrinth",
+        "tag": "auditory",
+        "url": "https://cdn.modrinth.com/data/1LjfkWOR/versions/XWyC0Mbo/auditory-0.0.5-1.19.3.jar"
+      },
+      {
+        "name": "Balm",
+        "type": "modrinth",
+        "tag": "balm",
+        "url": "https://cdn.modrinth.com/data/MBAkmtvl/versions/ONL5pq9r/balm-fabric-1.19.3-5.0.4.jar"
+      },
+      {
+        "name": "Carpet-Fixes",
+        "type": "modrinth",
+        "tag": "carpet-fixes",
+        "url": "https://cdn.modrinth.com/data/7Jaxgqip/versions/keNxajDd/carpet-fixes-1.19.3-1.13.0.jar"
+      },
+      {
+        "name": "Carpet",
+        "type": "modrinth",
+        "tag": "carpet",
+        "url": "https://cdn.modrinth.com/data/TQTTVgYE/versions/PEqJJf7p/fabric-carpet-1.19.3-1.4.96%2Bv230201.jar"
+      },
+      {
+        "name": "Chime",
+        "type": "modrinth",
+        "tag": "chime",
+        "url": "https://cdn.modrinth.com/data/ubxU84eR/versions/K8XS3EvC/chime-1.4.0.jar"
+      },
+      {
+        "name": "Chunky",
+        "type": "modrinth",
+        "tag": "chunky",
+        "url": "https://cdn.modrinth.com/data/fALzjamp/versions/F7XrnmdD/Chunky-1.3.53.jar"
+      },
+      {
+        "name": "CIT Resewn",
+        "type": "modrinth",
+        "tag": "cit-resewn",
+        "url": "https://cdn.modrinth.com/data/otVJckYQ/versions/hGatm5K8/CITResewn-1.1.3%2B1.19.3.jar"
+      },
+      {
+        "name": "Cloth Config API",
+        "type": "modrinth",
+        "tag": "cloth-config",
+        "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/M3yxljrZ/cloth-config-9.0.94-fabric.jar"
+      },
+      {
+        "name": "Collective",
+        "type": "modrinth",
+        "tag": "collective",
+        "url": "https://cdn.modrinth.com/data/e0M1UDsY/versions/tMeJbimo/collective-1.19.3-6.53.jar"
+      },
+      {
+        "name": "Continuity",
+        "type": "modrinth",
+        "tag": "continuity",
+        "url": "https://cdn.discordapp.com/attachments/872543494554648637/1072588299165769829/continuity-3.0.0-beta.21.19.3.jar"
+      },
+      {
+        "name": "Crafting Tweaks",
+        "type": "modrinth",
+        "tag": "crafting-tweaks",
+        "url": "https://cdn.modrinth.com/data/DMu0oBKf/versions/e8OrScgh/craftingtweaks-fabric-1.19.3-16.0.2.jar"
+      },
+      {
+        "name": "CreativeCore",
+        "type": "modrinth",
+        "tag": "creativecore",
+        "url": "https://cdn.modrinth.com/data/OsZiaDHq/versions/NBWDWypC/CreativeCore_FABRIC_v2.10.4_mc1.19.3.jar"
+      },
+      {
+        "name": "Dynamic Surroundings: Remastered",
+        "type": "modrinth",
+        "tag": "dynamicsurroundings_remasteredfabric",
+        "url": "0"
+      },
+      {
+        "name": "Enhanced Block Entities",
+        "type": "modrinth",
+        "tag": "ebe",
+        "url": "https://cdn.modrinth.com/data/OVuFYfre/versions/6NvQpIBY/enhancedblockentities-0.8%2B1.19.3.jar"
+      },
+      {
+        "name": "Entity View Distance",
+        "type": "modrinth",
+        "tag": "entity-view-distance",
+        "url": "https://cdn.modrinth.com/data/ihnBJ6on/versions/ZgG2dt7r/entity-view-distance-1.1.0%2B1.19.3.jar"
+      },
+      {
+        "name": "EntityCulling",
+        "type": "modrinth",
+        "tag": "entityculling",
+        "url": "https://cdn.modrinth.com/data/NNAgCjsB/versions/AdkBUIRs/entityculling-fabric-1.6.1-mc1.19.3.jar"
+      },
+      {
+        "name": "Exordium",
+        "type": "modrinth",
+        "tag": "exordium",
+        "url": "https://cdn.modrinth.com/data/DynYZEae/versions/QFalDyL5/exordium-fabric-1.0.3-mc1.19.3.jar"
+      },
+      {
+        "name": "ExtraSounds",
+        "type": "modrinth",
+        "tag": "extrasounds",
+        "url": "0"
+      },
+      {
+        "name": "Fabric API",
+        "type": "modrinth",
+        "tag": "fabric-api",
+        "url": "https://cdn.modrinth.com/data/P7dR8mSH/versions/V7gqra8F/fabric-api-0.76.0%2B1.19.3.jar"
+      },
+      {
+        "name": "Fabric Language Kotlin",
+        "type": "modrinth",
+        "tag": "fabric-language-kotlin",
+        "url": "https://cdn.modrinth.com/data/Ha28R6CL/versions/Ibros2FW/fabric-language-kotlin-1.9.2%2Bkotlin.1.8.10.jar"
+      },
+      {
+        "name": "FerriteCore",
+        "type": "modrinth",
+        "tag": "ferrite-core",
+        "url": "https://cdn.modrinth.com/data/uXXizFIs/versions/GHcKib6J/ferritecore-5.1.0-fabric.jar"
+      },
+      {
+        "name": "ImmediatelyFast",
+        "type": "modrinth",
+        "tag": "immediatelyfast",
+        "url": "https://cdn.modrinth.com/data/5ZwdcRci/versions/CdpFa9ts/ImmediatelyFast-1.1.10%2B1.19.3.jar"
+      },
+      {
+        "name": "Indium",
+        "type": "modrinth",
+        "tag": "indium",
+        "url": "https://cdn.modrinth.com/data/Orvt0mRa/versions/U94NcDpV/indium-1.0.14%2Bmc1.19.3.jar"
+      },
+      {
+        "name": "Iris Shaders",
+        "type": "modrinth",
+        "tag": "iris",
+        "url": "https://cdn.modrinth.com/data/YL57xq9U/versions/ExtC2pRY/iris-mc1.19.3-1.5.2.jar"
+      },
+      {
+        "name": "JourneyMap",
+        "type": "modrinth",
+        "tag": "journeymap",
+        "url": "https://cdn.modrinth.com/data/lfHFW1mp/versions/rkD3NWbF/journeymap-1.19.3-5.9.4-fabric.jar"
+      },
+      {
+        "name": "Krypton",
+        "type": "modrinth",
+        "tag": "krypton",
+        "url": "https://cdn.modrinth.com/data/fQEb0iXm/versions/0.2.1/krypton-0.2.1.jar"
+      },
+      {
+        "name": "LazyDFU",
+        "type": "modrinth",
+        "tag": "lazydfu",
+        "url": "https://cdn.modrinth.com/data/hvFnDODi/versions/0.1.3/lazydfu-0.1.3.jar"
+      },
+      {
+        "name": "Lithium",
+        "type": "modrinth",
+        "tag": "lithium",
+        "url": "https://cdn.modrinth.com/data/gvQqBUqZ/versions/53cwYYb1/lithium-fabric-mc1.19.3-0.11.1.jar"
+      },
+      {
+        "name": "Log Cleaner",
+        "type": "modrinth",
+        "tag": "log-cleaner",
+        "url": "https://cdn.modrinth.com/data/hwRo6mwQ/versions/wrFyE1h4/logcleaner-1.0.0.jar"
+      },
+      {
+        "name": "Memory Leak Fix",
+        "type": "modrinth",
+        "tag": "memoryleakfix",
+        "url": "https://cdn.modrinth.com/data/NRjRiSSD/versions/xn2d7ltf/memoryleakfix-1.19.3-0.8.0.jar"
+      },
+      {
+        "name": "Mod Menu",
+        "type": "modrinth",
+        "tag": "modmenu",
+        "url": "https://cdn.modrinth.com/data/mOgUt4GM/versions/eIrlBn1Z/modmenu-5.0.2.jar"
+      },
+      {
+        "name": "More Culling",
+        "type": "modrinth",
+        "tag": "moreculling",
+        "url": "https://cdn.modrinth.com/data/51shyZVL/versions/tPdgUkgf/moreculling-1.19.3-0.17.0.jar"
+      },
+      {
+        "name": "More Culling Extra",
+        "type": "modrinth",
+        "tag": "morecullingextra",
+        "url": "https://cdn.modrinth.com/data/dFKMFBrn/versions/iNzUzmM1/MoreCullingExtra-1.1-backport_1.19.2.jar"
+      },
+      {
+        "name": "Presence Footsteps",
+        "type": "modrinth",
+        "tag": "presence-footsteps",
+        "url": "https://cdn.modrinth.com/data/rcTfTZr3/versions/GExGOzbi/PresenceFootsteps-1.7.1.jar"
+      },
+      {
+        "name": "QuickShulker",
+        "type": "modrinth",
+        "tag": "quickshulker",
+        "url": "https://cdn.modrinth.com/data/RsZDxTI3/versions/7GhfpUQZ/quickshulker-1.3.10-1.19.3.jar"
+      },
+      {
+        "name": "Reese's Sodium Options",
+        "type": "modrinth",
+        "tag": "reeses-sodium-options",
+        "url": "https://cdn.modrinth.com/data/Bh37bMuy/versions/hkSQ9RqT/reeses_sodium_options-1.4.9%2Bmc1.19.2-build.67.jar"
+      },
+      {
+        "name": "ServerCore",
+        "type": "modrinth",
+        "tag": "versions",
+        "url": "https://cdn.modrinth.com/data/4WWQxlQP/versions/k0LvWP3Q/servercore-1.3.4-1.19.3.jar"
+      },
+      {
+        "name": "Sodium",
+        "type": "modrinth",
+        "tag": "sodium",
+        "url": "https://cdn.modrinth.com/data/AANobbMI/versions/idtcaIVT/sodium-fabric-mc1.19.3-0.4.9%2Bbuild.23.jar"
+      },
+      {
+        "name": "Sodium Extra",
+        "type": "modrinth",
+        "tag": "sodium-extra",
+        "url": "https://cdn.modrinth.com/data/PtjYWJkn/versions/Fo9beybz/sodium-extra-0.4.18%2Bmc1.19.3-build.99.jar"
+      },
+      {
+        "name": "spark",
+        "type": "modrinth",
+        "tag": "spark",
+        "url": "https://cdn.modrinth.com/data/l6YH9Als/versions/N7JzEApO/spark-1.10.34-fabric.jar"
+      },
+      {
+        "name": "Starlight (Fabric)",
+        "type": "modrinth",
+        "tag": "starlight",
+        "url": "https://cdn.modrinth.com/data/H8CaAYZC/versions/1.1.1%2B1.19/starlight-1.1.1%2Bfabric.ae22326.jar"
+      },
+      {
+        "name": "Status Effect Bars",
+        "type": "modrinth",
+        "tag": "status-effect-bars",
+        "url": "https://cdn.modrinth.com/data/x02cBj9Y/versions/vcO8eKk3/status-effect-bars-1.0.2.jar"
+      },
+      {
+        "name": "Very Many Players (Fabric)",
+        "type": "modrinth",
+        "tag": "vmp-fabric",
+        "url": "https://cdn.modrinth.com/data/wnEe9KBa/versions/tc6EbelN/vmp-fabric-mc1.19.3-0.2.0%2Bbeta.7.45-all.jar"
+      },
+      {
+        "name": "Waystones",
+        "type": "modrinth",
+        "tag": "waystones",
+        "url": "https://cdn.modrinth.com/data/LOpKHB2A/versions/F1PTJa0K/waystones-fabric-1.19.3-12.2.0.jar"
+      },
+      {
+        "name": "YetAnotherConfigLib",
+        "type": "modrinth",
+        "tag": "yacl",
+        "url": "https://cdn.modrinth.com/data/1eAoo2KR/versions/3EWbdCzX/YetAnotherConfigLib-2.2.0.jar"
+      },
+      {
+        "name": "Explorer's Compass",
+        "type": "curseforge",
+        "tag": "explorers-compass",
+        "url": "https://www.curseforge.com/minecraft/mc-mods/explorers-compass/download/4175011"
+      },
+      {
+        "name": "Nature's Compass",
+        "type": "curseforge",
+        "tag": "natures-compass",
+        "url": "https://www.curseforge.com/minecraft/mc-mods/natures-compass/download/4174994"
+      },
+      {
+        "name": "MiniHUD",
+        "type": "curseforge",
+        "tag": "minihud",
+        "url": "https://www.curseforge.com/minecraft/mc-mods/minihud/download/4160116"
+      },
+      {
+        "name": "WorldEdit",
+        "type": "curseforge",
+        "tag": "worldedit",
+        "url": "https://www.curseforge.com/minecraft/mc-mods/worldedit/download/4162208"
+      },
+      {
+        "name": "WorldEdit CUI (Fabric)",
+        "type": "curseforge",
+        "tag": "worldeditcui-fabric",
+        "url": "https://www.curseforge.com/minecraft/mc-mods/worldeditcui-fabric/download/4166542"
+      },
+      {
+        "name": "MaLiLib",
+        "type": "curseforge",
+        "tag": "malilib",
+        "url": "https://www.curseforge.com/minecraft/mc-mods/malilib/download/4147598"
+      },
+      {
+        "name": "Sound Categories",
+        "type": "modrinth",
+        "tag": "sound-categories",
+        "url": "0"
+      },
+      {
+        "name": "Sound Physics",
+        "type": "modrinth",
+        "tag": "sound-physics-remastered",
+        "url": "0"
       }
     ],
     "resources": [
