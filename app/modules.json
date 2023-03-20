@@ -8,7 +8,7 @@
   },
   "app": {
     "polymc": "https://github.com/PolyMC/PolyMC/releases/download/5.1/PolyMC-Windows-Setup-5.1.exe",
-    "zogg": "https://l.zogg.fr/PolyMC",
+    "profile": "https://l.zogg.fr/PolyMC",
     "instances": "https://l.zogg.fr/PolyMCinstance"
   },
   "client": {
