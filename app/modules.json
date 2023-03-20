@@ -3,7 +3,8 @@
     "owner": "Zogg",
     "game": "Minecraft",
     "url": "mc.zogg.fr",
-    "version": "1.19.3"
+    "version": "1.19.3",
+    "updated": "2023-03-20"
   },
   "client": {
     "modules": [
@@ -89,7 +90,7 @@
         "name": "Dynamic Surroundings: Remastered",
         "type": "modrinth",
         "tag": "dynamicsurroundings_remasteredfabric",
-        "url": "0"
+        "url": "https://github.com/kraoc/mods/raw/main/app/mods/DynamicSurroundings-RemasteredFabric-1.19.3-0.1.1.jar"
       },
       {
         "name": "Enhanced Block Entities",
@@ -119,7 +120,7 @@
         "name": "ExtraSounds",
         "type": "modrinth",
         "tag": "extrasounds",
-        "url": "0"
+        "url": "https://github.com/kraoc/mods/raw/main/app/mods/extra-sounds-2.3.1%2B1.19.3%7Elonefelidae16-build.4.jar"
       },
       {
         "name": "Fabric API",
@@ -323,13 +324,13 @@
         "name": "Sound Categories",
         "type": "modrinth",
         "tag": "sound-categories",
-        "url": "0"
+        "url": "https://github.com/kraoc/mods/raw/main/app/mods/soundcategories-1.2.4%2B1.19.3.jar"
       },
       {
         "name": "Sound Physics",
         "type": "modrinth",
         "tag": "sound-physics-remastered",
-        "url": "0"
+        "url": "https://github.com/kraoc/mods/raw/main/app/mods/soundphysics-fabric-1.19.3-1.1.0.jar"
       }
     ],
     "resources": [
