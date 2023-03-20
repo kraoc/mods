@@ -13,6 +13,22 @@
         "tag": "appleskin",
         "url": "https://cdn.modrinth.com/data/EsAfCjCV/versions/ntsDU1AP/appleskin-fabric-mc1.19.3-2.4.2.jar"
       }
+    ],
+    "resources": [
+      {
+        "name": "Faithful 64x",
+        "type": "modrinth",
+        "tag": "faithful-64x",
+        "url": "https://cdn.modrinth.com/data/r4GILswZ/versions/jt6UA0WN/Faithful%2B64x.zip"
+      }
+    ],
+    "shaders": [
+      {
+        "name": "Complementary Reimagined",
+        "type": "modrinth",
+        "tag": "complementary-reimagined",
+        "url": "https://cdn.modrinth.com/data/HVnmMxH1/versions/jCIQGZp3/ComplementaryReimagined_r2.0.3.zip"
+      }
     ]
   }
 }
