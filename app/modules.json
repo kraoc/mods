@@ -17,9 +17,51 @@
     "resources": [
       {
         "name": "Faithful 64x",
-        "type": "modrinth",
+        "type": "curseforge",
         "tag": "faithful-64x",
-        "url": "https://cdn.modrinth.com/data/r4GILswZ/versions/jt6UA0WN/Faithful%2B64x.zip"
+        "url": "https://www.curseforge.com/minecraft/texture-packs/faithful-64x/download/4174223"
+      },
+      {
+        "name": "3D Glass Doors",
+        "type": "faithfulpack",
+        "tag": "3DGlassDoors",
+        "url": "https://mega.nz/file/4ONFiQ6D#BVShglnNgtG7Fgrf7lm-FAraMNDB7znc7HhXWsF6wv4"
+      },
+      {
+        "name": "CTM 64x",
+        "type": "modrinth",
+        "tag": "ctm-faithful",
+        "url": "https://cdn.modrinth.com/data/qtbeFoLR/versions/GJJmu2u6/CTM%20Faithful%201.19.x.zip"
+      },
+      {
+        "name": "Ore Borders 64x",
+        "type": "github",
+        "tag": "ob",
+        "url": "https://github.com/Hedreon/Faithful-Addons/releases/download/1.19.3-ob/OreBorders64x_1.19.3.zip"
+      },
+      {
+        "name": "Glowing Ore",
+        "type": "github",
+        "tag": "glowing-ore",
+        "url": "https://github.com/copy-cancel/glowing-ore/raw/main/Glowing%20Ore.zip"
+      },
+      {
+        "name": "Cauldron & Composter Levels",
+        "type": "curseforge",
+        "tag": "cc-levels",
+        "url": "https://www.curseforge.com/minecraft/texture-packs/cc-levels/download/3693002/file"
+      },
+      {
+        "name": "Redstone Utilities",
+        "type": "curseforge",
+        "tag": "redstone-utilities",
+        "url": "https://www.curseforge.com/minecraft/texture-packs/redstone-utilities/download/3585812/file"
+      },
+      {
+        "name": "Xray Ultimate",
+        "type": "curseforge",
+        "tag": "xray-ultimate-1-11-compatible",
+        "url": "https://www.curseforge.com/minecraft/texture-packs/xray-ultimate-1-11-compatible/download/3904015"
       }
     ],
     "shaders": [
