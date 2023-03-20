@@ -368,19 +368,19 @@
         "name": "Cauldron & Composter Levels",
         "type": "curseforge",
         "tag": "cc-levels",
-        "url": "https://mediafilez.forgecdn.net/files/3693/2/CCLevels%2B+%5b1.18.x%5d.zip"
+        "url": "https://github.com/kraoc/mods/raw/main/app/resources/CCLevels%2B%2B%5B1.18.x%5D.zip"
       },
       {
         "name": "Redstone Utilities",
         "type": "curseforge",
         "tag": "redstone-utilities",
-        "url": "https://mediafilez.forgecdn.net/files/3585/812/Redstone+Utilities-v2+%5b1.18.x%5d.zip"
+        "url": "https://github.com/kraoc/mods/raw/main/app/resources/Redstone%2BUtilities-v2%2B%5B1.18.x%5D.zip"
       },
       {
         "name": "Xray Ultimate",
         "type": "curseforge",
         "tag": "xray-ultimate-1-11-compatible",
-        "url": "https://mediafilez.forgecdn.net/files/3904/15/Xray_Ultimate_1.19_v4.2.3.zip"
+        "url": "https://github.com/kraoc/mods/raw/main/app/resources/Xray_Ultimate_1.19_v4.2.3.1.zip"
       }
     ],
     "shaders": [
