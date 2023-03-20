@@ -2,6 +2,7 @@
   "core": {
     "owner": "Zogg",
     "game": "Minecraft",
+    "url": "mc.zogg.fr",
     "version": "1.19.3"
   },
   "client": {
