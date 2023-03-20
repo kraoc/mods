@@ -288,37 +288,37 @@
         "name": "Explorer's Compass",
         "type": "curseforge",
         "tag": "explorers-compass",
-        "url": "https://www.curseforge.com/minecraft/mc-mods/explorers-compass/download/4175011"
+        "url": "https://mediafilez.forgecdn.net/files/4175/11/ExplorersCompass-1.19.3-2.2.0-fabric.jar"
       },
       {
         "name": "Nature's Compass",
         "type": "curseforge",
         "tag": "natures-compass",
-        "url": "https://www.curseforge.com/minecraft/mc-mods/natures-compass/download/4174994"
+        "url": "https://mediafilez.forgecdn.net/files/4174/994/NaturesCompass-1.19.3-2.1.1-fabric.jar"
       },
       {
         "name": "MiniHUD",
         "type": "curseforge",
         "tag": "minihud",
-        "url": "https://www.curseforge.com/minecraft/mc-mods/minihud/download/4160116"
+        "url": "https://mediafilez.forgecdn.net/files/4160/116/minihud-fabric-1.19.3-0.25.0.jar"
       },
       {
         "name": "WorldEdit",
         "type": "curseforge",
         "tag": "worldedit",
-        "url": "https://www.curseforge.com/minecraft/mc-mods/worldedit/download/4162208"
+        "url": "https://mediafilez.forgecdn.net/files/4162/208/worldedit-mod-7.2.13.jar"
       },
       {
         "name": "WorldEdit CUI (Fabric)",
         "type": "curseforge",
         "tag": "worldeditcui-fabric",
-        "url": "https://www.curseforge.com/minecraft/mc-mods/worldeditcui-fabric/download/4166542"
+        "url": "https://mediafilez.forgecdn.net/files/4166/542/WorldEditCUI-1.19.3%2B01.jar"
       },
       {
         "name": "MaLiLib",
         "type": "curseforge",
         "tag": "malilib",
-        "url": "https://www.curseforge.com/minecraft/mc-mods/malilib/download/4147598"
+        "url": "https://mediafilez.forgecdn.net/files/4147/598/malilib-fabric-1.19.3-0.14.0.jar"
       },
       {
         "name": "Sound Categories",
@@ -338,7 +338,7 @@
         "name": "Faithful 64x",
         "type": "curseforge",
         "tag": "faithful-64x",
-        "url": "https://www.curseforge.com/minecraft/texture-packs/faithful-64x/download/4174223"
+        "url": "https://mediafilez.forgecdn.net/files/4174/223/Faithful+64x.zip"
       },
       {
         "name": "3D Glass Doors",
@@ -368,19 +368,19 @@
         "name": "Cauldron & Composter Levels",
         "type": "curseforge",
         "tag": "cc-levels",
-        "url": "https://www.curseforge.com/minecraft/texture-packs/cc-levels/download/3693002/file"
+        "url": "https://mediafilez.forgecdn.net/files/3693/2/CCLevels%2B+%5b1.18.x%5d.zip"
       },
       {
         "name": "Redstone Utilities",
         "type": "curseforge",
         "tag": "redstone-utilities",
-        "url": "https://www.curseforge.com/minecraft/texture-packs/redstone-utilities/download/3585812/file"
+        "url": "https://mediafilez.forgecdn.net/files/3585/812/Redstone+Utilities-v2+%5b1.18.x%5d.zip"
       },
       {
         "name": "Xray Ultimate",
         "type": "curseforge",
         "tag": "xray-ultimate-1-11-compatible",
-        "url": "https://www.curseforge.com/minecraft/texture-packs/xray-ultimate-1-11-compatible/download/3904015"
+        "url": "https://mediafilez.forgecdn.net/files/3904/15/Xray_Ultimate_1.19_v4.2.3.zip"
       }
     ],
     "shaders": [
