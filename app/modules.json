@@ -350,7 +350,7 @@
         "name": "CTM 64x",
         "type": "modrinth",
         "tag": "ctm-faithful",
-        "url": "https://cdn.modrinth.com/data/qtbeFoLR/versions/GJJmu2u6/CTM%20Faithful%201.19.x.zip"
+        "url": "https://github.com/kraoc/mods/raw/main/app/resources/CTM%20Faithful%201.19.3.zip"
       },
       {
         "name": "Ore Borders 64x",
@@ -362,7 +362,7 @@
         "name": "Glowing Ore",
         "type": "github",
         "tag": "glowing-ore",
-        "url": "https://github.com/copy-cancel/glowing-ore/raw/main/Glowing%20Ore.zip"
+        "url": "https://github.com/kraoc/mods/raw/main/app/resources/Glowing%20Ores.zip"
       },
       {
         "name": "Cauldron & Composter Levels",
