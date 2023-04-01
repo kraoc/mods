@@ -20,6 +20,7 @@ fabricproxy-lite
 fallingtree
 ferrite-core
 fish-on-the-line
+goml-reserved
 inventory-totem
 journeymap
 krypton
