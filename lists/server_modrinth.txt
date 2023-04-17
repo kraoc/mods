@@ -10,6 +10,7 @@ cloth-config
 collective
 commandaliases
 crafting-tweaks
+debugify
 double-doors
 entity-view-distance
 essentialaddons
@@ -18,9 +19,11 @@ fabric-api
 fabric-language-kotlin
 fabricproxy-lite
 fallingtree
+fastload
 ferrite-core
 fish-on-the-line
 goml-reserved
+gotta-go-fast-fabric
 inventory-totem
 journeymap
 krypton
@@ -28,12 +31,15 @@ lazydfu
 lithium
 log-cleaner
 memoryleakfix
+modmenu
 player-events
 polymer
 quickshulker
 replanting-crops
 rightclickharvest
 servercore
+slumber
+smoothboot-fabric
 spark
 starlight
 tree-harvester
