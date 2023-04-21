@@ -1,9 +1,6 @@
 appleskin
 auditory
 balm
-bam
-bluemap
-c2me-fabric
 carpet
 carpet-fixes
 chunky
@@ -20,10 +17,7 @@ fabric-api
 fabric-language-kotlin
 fabricproxy-lite
 fallingtree
-fastload
 ferrite-core
-fish-on-the-line
-goml-reserved
 gotta-go-fast-fabric
 inventory-totem
 journeymap
@@ -35,7 +29,6 @@ memoryleakfix
 modmenu
 player-events
 polymer
-quickshulker
 replanting-crops
 rightclickharvest
 servercore
