@@ -1,0 +1,395 @@
+# -----------------------------------------------------------------------------
+# BASH TWEAKS
+# -----------------------------------------------------------------------------
+
+
+# ------------------------------
+# HISTORY
+# ------------------------------
+
+# Line wrap on window resize
+shopt -s checkwinsize
+
+# Enable history
+set -o history
+
+# Combine multiline commands into one in history
+shopt -s cmdhist
+
+# Disable completion when the input buffer is empty.  i.e. Hitting tab
+# and waiting a long time for bash to expand all of $PATH.
+shopt -s no_empty_cmd_completion
+
+# Shorter history
+export HISTCONTROL=ignoredups
+export HISTIGNORE='&:ls:[bf]g:exit'
+
+# big history
+export HISTFILESIZE=20000
+export HISTSIZE=10000
+shopt -s histappend
+
+# History completion
+bind "'\e[A': history-search-backward"
+bind "'\e[B': history-search-forward"
+
+
+# ------------------------------
+# COMPLETION
+# ------------------------------
+
+# Autocomplétion
+if ! shopt -oq posix; then
+  if [ -f /usr/share/bash-completion/bash_completion ]; then
+    . /usr/share/bash-completion/bash_completion
+  elif [ -f /etc/bash_completion ]; then
+    . /etc/bash_completion
+  fi
+fi
+
+# bash completion
+[ -r /usr/share/bash-completion/bash_completion   ] && . /usr/share/bash-completion/bash_completion
+bind 'set completion-ignore-case on' # note: bind used instead of sticking these in .inputrc
+bind 'set bell-style none' # no bell
+bind 'set show-all-if-ambiguous On' # show list automatically, without double tab
+
+
+# ------------------------------
+# COLORS
+# ------------------------------
+
+# colors & char
+# text normal colors
+red='\e[0;31m'
+blue='\e[0;34m'
+cyan='\e[0;36m'
+green='\e[0;32m'
+yellow='\e[0;33m'
+# text bright colors
+bred='\e[0;91m'
+bblue='\e[0;94m'
+bcyan='\e[0;96m'
+bgreen='\e[0;92m'
+byellow='\e[0;93m'
+bwhite='\e[0;97m'
+# reset color
+NC='\e[0m'
+
+# Set colorful PS1 only on colorful terminals.
+# dircolors --print-database uses its own built-in database
+# instead of using /etc/DIR_COLORS.  Try to use the external file
+# first to take advantage of user additions.
+# We run dircolors directly due to its changes in file syntax and
+# terminal name patching.
+use_color=false
+if type -P dircolors >/dev/null ; then
+        # Enable colors for ls, etc.  Prefer ~/.dir_colors #64489
+        LS_COLORS=
+        if [[ -f ~/.dir_colors ]] ; then
+                eval "$(dircolors -b ~/.dir_colors)"
+        elif [[ -f /etc/DIR_COLORS ]] ; then
+                eval "$(dircolors -b /etc/DIR_COLORS)"
+        else
+                eval "$(dircolors -b)"
+        fi
+        # Note: We always evaluate the LS_COLORS setting even when it's the
+        # default.  If it isn't set, then `ls` will only colorize by default
+        # based on file attributes and ignore extensions (even the compiled
+        # in defaults of dircolors). #583814
+        if [[ -n ${LS_COLORS:+set} ]] ; then
+                use_color=true
+        else
+                # Delete it if it's empty as it's useless in that case.
+                unset LS_COLORS
+        fi
+else
+        # Some systems (e.g. BSD & embedded) don't typically come with
+        # dircolors so we need to hardcode some terminals in here.
+        case ${TERM} in
+        [aEkx]term*|rxvt*|gnome*|konsole*|screen|cons25|*color) use_color=true;;
+        esac
+fi
+
+if ${use_color} ; then
+        if [[ ${EUID} == 0 ]] ; then
+                PS1+='\[\033[01;31m\]\h\[\033[01;34m\] \w \$\[\033[00m\] '
+        else
+                PS1+='\[\033[01;32m\]\u@\h\[\033[01;34m\] \w \$\[\033[00m\] '
+        fi
+
+        #BSD#@export CLICOLOR=1
+        #GNU#@alias ls='ls --color=auto'
+        alias grep='grep --colour=auto'
+        alias egrep='egrep --colour=auto'
+        alias fgrep='fgrep --colour=auto'
+else
+        # show root@ when we don't have colors
+        PS1+='\u@\h \w \$ '
+fi
+for sh in /etc/bash/bashrc.d/* ; do
+        [[ -r ${sh} ]] && source '${sh}'
+done
+
+# Try to keep environment pollution down, EPA loves us.
+unset use_color sh
+
+
+
+# ------------------------------
+# PROMPT
+# ------------------------------
+
+# Prompt
+PS1='[\u@\h \W]\$ '
+case ${TERM} in
+  xterm*|rxvt*|Eterm|aterm|kterm|gnome*)
+    PROMPT_COMMAND=${PROMPT_COMMAND:+$PROMPT_COMMAND; }"printf '\033]0;%s@%s:%s\007' '${USER}' '${HOSTNAME%%.*}' '${PWD/#$HOME/\~}'"
+
+    ;;
+  screen*)
+    PROMPT_COMMAND=${PROMPT_COMMAND:+$PROMPT_COMMAND; }"printf '\033_%s@%s:%s\033\\' '${USER}' '${HOSTNAME%%.*}' '${PWD/#$HOME/\~}'"
+    ;;
+esac
+if [ '$color_prompt' = yes ]; then
+    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+else
+    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
+fi
+unset color_prompt force_color_prompt
+
+# Titre du terminal
+# If this is an xterm set the title to user@host:dir
+case '$TERM' in
+xterm*|rxvt*)
+    PS1='\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1'
+    ;;
+*)
+    ;;
+esac
+
+
+
+# ------------------------------
+# ALIASES
+# ------------------------------
+
+# Privileged access
+if (( UID != 0 )); then
+    alias sudo='sudo '
+    alias scat='sudo cat'
+    alias svim='sudoedit'
+    alias root='sudo -i'
+    alias reboot='sudo systemctl reboot'
+    alias poweroff='sudo systemctl poweroff'
+    alias update='sudo apt update'
+    alias netctl='sudo netctl'
+fi
+
+## Safety features
+alias cp='cp -i'
+alias mv='mv -i'
+alias rm='rm -I'                    # 'rm -i' prompts for every file
+
+# btrfs cow
+alias cp='cp -i --reflink=auto'
+
+# safer alternative w/ timeout, not stored in history
+alias rm=' timeout 3 rm -Iv --one-file-system'
+alias ln='ln -i'
+alias chown='chown --preserve-root'
+alias chmod='chmod --preserve-root'
+alias chgrp='chgrp --preserve-root'
+alias cls=" echo -ne '\033c'"       # clear screen for real (it does not work in Terminology)
+
+## Make Bash error tolerant
+alias :q=' exit'
+alias :Q=' exit'
+alias :x=' exit'
+alias cd..='cd ..'
+
+# process using web
+alias ports='lsof -i -n -P'
+
+# make parent directory if needed
+alias mkdir='mkdir -p'
+
+# quit, exit & reboot
+alias :q='exit'
+alias oust="echo 'bye $USER...'; sleep 2s && systemctl poweroff"
+alias comeback="echo 'be back right now...'; sleep 2s && systemctl reboot"
+
+# Modified commands
+alias diff='colordiff'              # requires colordiff package
+alias grep='grep --color=auto'
+alias more='less'
+alias df='df -h'
+alias du='du -c -h'
+alias mkdir='mkdir -p -v'
+alias nano='nano -w'
+alias ping='ping -c 5'
+alias dmesg='dmesg -HL'
+
+## New commands
+alias da="date '+%A, %B %d, %Y [%T]'"
+alias du1='du --max-depth=1'
+alias hist='history | grep'         # requires an argument
+alias openports='ss --all --numeric --processes --ipv4 --ipv6'
+alias pgg='ps -Af | grep'           # requires an argument
+alias ..='cd ..'
+alias x=exit
+
+# changes directories
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+alias .....='cd ../../../..'
+alias .3='...'
+alias .4='....'
+alias .5='.....'
+
+# handy short cuts
+alias h='history'
+alias j='jobs -l'
+
+# date /time
+alias path='echo -e ${PATH//:/\\n}'
+alias now="date +'%T'"
+alias nowtime=now
+alias nowdate="date +'%d-%m-%Y'"
+
+## pass options to free ##
+alias free='free -h'
+alias meminfo='free -m -l -t'
+
+## get top process eating memory
+alias psmem='ps auxf | sort -nr -k 4'
+alias psmem10='ps auxf | sort -nr -k 4 | head -10'
+
+## get top process eating cpu ##
+alias pscpu='ps auxf | sort -nr -k 3'
+alias pscpu10='ps auxf | sort -nr -k 3 | head -10'
+
+## Resume wget by default
+alias wget='wget -c'
+
+# better 'top'
+alias top='htop'
+
+# screen default resume
+alias screen='screen -R'
+alias sr='screen'
+
+# listings
+alias ll='ls -lha'
+alias lo='ls -o'
+alias lh='ls -lh'
+alias la='ls -la'
+alias sl='ls'
+alias l='ls'
+alias s='ls'
+alias lt='ls -laptr' #oldest first sort
+alias labc='ls -lap' #alphabetical sort
+
+## ls
+alias ls='ls -hFX --color=auto --group-directories-first'
+alias lr='ls -RhFX --color=auto --group-directories-first'
+alias ll='ls -lhFXa --color=auto --group-directories-first'
+alias la='ll -AhFX --color=auto --group-directories-first'
+alias lx='ll -BXhFX --color=auto --group-directories-first'                   # sort by extension
+alias lz='ll -rShFX --color=auto --group-directories-first'                   # sort by size
+alias lt='ll -rthFX --color=auto --group-directories-first'                   # sort by date
+alias lm='la | more'
+
+# Git related
+alias gs='git status'
+alias gc='git commit'
+alias ga='git add'
+alias gd='git diff'
+alias gb='git branch'
+alias gl='git log'
+alias gsb='git show-branch'
+alias gco='git checkout'
+alias gg='git grep'
+alias gk='gitk --all'
+alias gr='git rebase'
+alias gri='git rebase --interactive'
+alias gcp='git cherry-pick'
+alias grm='git rm'
+
+# packages
+alias pacman='sudo pacman'
+alias remove='pacman -R'
+alias update='pacman -Syy'
+alias upgrade='pacman -Syu && yay'
+alias install='pacman -S --needed'
+alias installed='pacman -Q'
+#alias update='sudo powerpill -Syy'
+#alias upgrade='sudo powerpill -Syu'
+#alias install='sudo powerpill -S --needed'
+
+# performances analysis
+alias analyze='systemd-analyze'
+alias blame='systemd-analyze blame'
+alias criticalchain='systemd-analyze critical-chain'
+alias plot='systemd-analyze plot > /tmp/boot.analysis.svg && chmod 0777 /tmp/boot.analysis.svg'
+
+# systemctl
+alias ssysctl='sudo systemctl'
+alias status='ssysctl status'
+alias running='ssysctl list-units'
+alias failed='ssysctl --failed'
+alias units='ssysctl list-unit-files'
+alias start='ssysctl start'
+alias stop='ssysctl stop'
+alias restart='ssysctl restart'
+alias reload='ssysctl reload'
+alias status='ssysctl status'
+alias enable='ssysctl enable'
+alias disable='ssysctl disable'
+alias activate='enable --now'
+alias mask='ssysctl mask'
+alias unmask='ssysctl unmask'
+alias help='ssysctl help'
+alias daemonreload='ssysctl daemon-reload'
+alias reboot='ssysctl reboot'
+alias poweroff='ssysctl poweroff'
+alias suspend='ssysctl suspend'
+alias hibernate='ssysctl hibernate'
+alias sleep='ssysctl hybrid-sleep'
+alias reenable='ssysctl reenable'
+alias revert='ssysctl revert'
+alias targets='running --type=target'
+alias enabled='units |grep enabled'
+alias disabled='units |grep disabled'
+alias jobs='ssysctl list-jobs'
+
+# journald
+alias journal='sudo journalctl'
+alias boot='journal -b'
+alias pid='journal _PID='
+alias follow='journal -f'
+alias kernel='journal -k'
+alias unit='journal -u'
+alias jeca='journal -p err..alert'
+alias jreload='reload systemd-journald.service'
+alias jauth='journal SYSLOG_FACILITY=10'
+alias since='journal --since'
+alias today="journalsince 'yesterday'"
+alias j1h="journalsince '60 minutes ago'"
+alias j15m="journal --since '15 minutes ago'"
+alias j30m="journal --since '30 minutes ago'"
+alias kernelboot='journal -k -b -1'
+alias boots='journal --list-boots'
+alias entries20='journal -n 20'
+
+# exports
+export EDITOR='nano'
+export BROWSER='surf'
+export PAGER='most'
+
+# path
+#export PATH="/usr/lib/ccache/bin/:$PATH"
+export PATH="/usr/lib/colorgcc/bin/:$PATH"
+export CCACHE_PATH='/usr/bin'
+export CCACHE_DIR=/mnt/build
+export BUILDDIR=/mnt/build
