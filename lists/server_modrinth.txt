@@ -1,8 +1,6 @@
 appleskin
-auditory
 balm
 carpet
-carpet-fixes
 chunky
 cloth-config
 collective
@@ -22,7 +20,6 @@ gotta-go-fast-fabric
 inventory-totem
 journeymap
 krypton
-lazydfu
 lithium
 log-cleaner
 memoryleakfix
