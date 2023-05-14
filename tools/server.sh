@@ -1,7 +1,7 @@
 #!/bin/bash
 clear
 
-# 2023-03-02
+# 2023-05-14
 
 MinecraftVersion=Inconnue
 ListVersion=https://github.com/kraoc/mods/raw/main/lists/version.txt
@@ -121,11 +121,13 @@ DisplayHeader
 echo   - Préparation des modules
 echo
 PrepareModules
+sleep 10
 
 DisplayHeader
 echo   - Installation, ou mise à jour, des modules
 echo
 InstallModules
+sleep 10
 
 DisplayHeader
 echo   - Resumé des modules installés
