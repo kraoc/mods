@@ -1,7 +1,6 @@
 appleskin
 balm
 bluemap
-bam
 carpet
 chunky
 cloth-config
