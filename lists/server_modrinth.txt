@@ -24,6 +24,7 @@ lithium
 log-cleaner
 memoryleakfix
 modmenu
+modernfix
 player-events
 polymer
 replanting-crops
