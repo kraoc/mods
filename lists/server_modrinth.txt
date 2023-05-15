@@ -1,6 +1,9 @@
 appleskin
+alternate-current
+automodpack
 balm
 bluemap
+c2me-fabric
 carpet
 chunky
 cloth-config
