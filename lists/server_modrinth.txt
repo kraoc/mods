@@ -3,6 +3,8 @@ alternate-current
 automodpack
 balm
 bluemap
+bluemap-offline-player-markers-(fabric)
+bmarker
 c2me-fabric
 carpet
 chunky
