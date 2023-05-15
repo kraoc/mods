@@ -1,6 +1,5 @@
 appleskin
 alternate-current
-automodpack
 balm
 bluemap
 bluemap-offline-player-markers-(fabric)
