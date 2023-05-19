@@ -25,6 +25,7 @@ lithium
 log-cleaner
 memoryleakfix
 modmenu
+no-unused-chunks
 player-events
 polymer
 replanting-crops
