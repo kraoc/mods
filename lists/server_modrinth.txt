@@ -8,6 +8,7 @@ chunky
 cloth-config
 collective
 commandaliases
+debugify
 double-doors
 entity-view-distance
 essentialaddons
@@ -22,6 +23,7 @@ journeymap
 krypton
 lithium
 log-cleaner
+memoryleakfix
 modmenu
 player-events
 polymer
