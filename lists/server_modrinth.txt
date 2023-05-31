@@ -18,7 +18,6 @@ lithium
 log-cleaner
 memoryleakfix
 modernfix
-phosphor
 player-events
 rail-optimization
 replanting-crops
