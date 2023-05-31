@@ -28,3 +28,4 @@ starlight
 tree-harvester
 universal-graves
 vmp-fabric
+waystones
