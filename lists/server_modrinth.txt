@@ -1,4 +1,5 @@
 alternate-current
+balm
 bluemap
 bmarker
 commandaliases
@@ -11,6 +12,7 @@ fabric-language-kotlin
 fabricproxy-lite
 ferrite-core
 gotta-go-fast-fabric
+jamlib
 journeymap
 krypton
 lithium
