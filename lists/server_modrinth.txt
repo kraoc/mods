@@ -19,6 +19,7 @@ lithium
 log-cleaner
 memoryleakfix
 modernfix
+owo-lib
 player-events
 replanting-crops
 rightclickharvest
