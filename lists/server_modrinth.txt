@@ -2,6 +2,7 @@ alternate-current
 balm
 bluemap
 bmarker
+c2me-fabric
 commandaliases
 debugify
 double-doors
@@ -24,6 +25,7 @@ player-events
 replanting-crops
 rightclickharvest
 servercore
+silk
 starlight
 tree-harvester
 universal-graves
