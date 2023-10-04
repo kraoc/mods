@@ -1,8 +1,41 @@
 #!/bin/bash
-clear
+doBuildSystem() {
+	echo "v2023-10-04"
+}
 
-# 2023-05-14
+HOSTNAME=$(hostname)
+SELF=$(realpath $0)
+SCRIPT=$(basename $SELF)
+CWD=$(dirname $SELF)
 
+cd $CWD
+
+# Display introduction
+doIntro() {
+	echo
+	echo "Minecraft Mods Managment: $HOSTNAME"
+	doBuildSystem
+	echo
+}
+
+# Show date/time header
+doHeader() {
+	NOW=`date +"%Y/%m/%d %H:%M:%S"`
+	echo "- $NOW"
+	echo ""
+}
+
+if [ "$(id -u)" != "0" ]; then
+    doIntro
+    doHeader
+    echo "This script must be run as root !!!" 1>&2
+    exit 1
+fi
+
+doIntro
+doHeader
+
+ProfileName=zogg
 MinecraftVersion=Inconnue
 ListVersion=https://github.com/kraoc/mods/raw/main/lists/version.txt
 ListModrinth=https://github.com/kraoc/mods/raw/main/lists/server_modrinth.txt
@@ -14,128 +47,120 @@ FabricFolder=/opt/docker/pterodactyl/mounts/fabric
 # Script display header
 function DisplayHeader() {
     clear
-    echo [Minecraft Zogg]
-    echo   - Version $MinecraftVersion
+    doIntro
+    doHeader
+    echo "  - Version $MinecraftVersion"
 }
 
 # Delete already existing profile
 function DeleteProfile() {
-    tools/ferium profile delete --profile-name zogg >/dev/null 2>&1
+    echo "  * Delete Ferium profile: $ProfileName"
+    ./tools/ferium profile delete --profile-name $ProfileName >/dev/null 2>&1
 }
 
 # Create profile
 function CreateProfile() {
-    tools/ferium profile create --name zogg --mod-loader fabric --output-dir $FabricFolder --game-version $MinecraftVersion >/dev/null 2>&1
-    tools/ferium profile switch --profile-name zogg >/dev/null 2>&1
-    tools/ferium profile configure
+    echo "  * Create Ferium profile: $ProfileName"
+    ./tools/ferium profile create --name $ProfileName --mod-loader fabric --output-dir $FabricFolder --game-version $MinecraftVersion >/dev/null 2>&1
+    ./tools/ferium profile switch --profile-name $ProfileName >/dev/null 2>&1
+    ./tools/ferium profile configure
 }
 
 # Download Remote File
 function DownloadRemoteFile() {
-    rm -f $2 >/dev/null 2>&1
-    wget --header="Cache-Control: no-cache, no-store, max-age=0, must-revalidate" --header="Pragma: no-cache" --header="Expires: -1" --output-document=$2 --no-clobber --no-dns-cache --inet4-only --no-cache --no-cookies --no-check-certificate --recursive $1 >/dev/null 2>&1
+    SRC=$1
+    DST=$2
+    echo "      - Download: $SRC to $DST"
+    rm -f $DST >/dev/null 2>&1
+    wget --header="Cache-Control: no-cache, no-store, max-age=0, must-revalidate" --header="Pragma: no-cache" --header="Expires: -1" --output-document=$DST --no-clobber --no-dns-cache --inet4-only --no-cache --no-cookies --no-check-certificate --recursive $SRC >/dev/null 2>&1
 }
 
 # Update Ferium
 function UpdateFerium() {
-    mkdir -p tools >/dev/null 2>&1
-    cd tools/
-        #rm -f ferium >/dev/null 2>&1
-        #wget --header="Cache-Control: no-cache, no-store, max-age=0, must-revalidate" --header="Pragma: no-cache" --header="Expires: -1" --output-document=ferium --no-clobber --no-dns-cache --inet4-only --no-cache --no-cookies --no-check-certificate --recursive $FeriumApp >/dev/null 2>&1
+    echo "  * Update Ferium"
+    mkdir -p ./tools >/dev/null 2>&1
+    cd ./tools/
         DownloadRemoteFile $FeriumApp ferium
     cd ..
+    # Set execute permissions
+    chmod +x ./tools/ferium >/dev/null 2>&1
 }
 
 # Update all versions and modules datas
 function UpdateDatas() {
-    mkdir -p datas >/dev/null 2>&1
-    cd datas/
-        rm -f datas.zip >/dev/null 2>&1
-        #rm -f version.txt >/dev/null 2>&1
-        #rm -f modrinth.txt >/dev/null 2>&1
-        #rm -f curseforge.txt >/dev/null 2>&1
-        #wget --header="Cache-Control: no-cache, no-store, max-age=0, must-revalidate" --header="Pragma: no-cache" --header="Expires: -1" --output-document=version.txt --no-clobber --no-dns-cache --inet4-only --no-cache --no-cookies --no-check-certificate --recursive $ListVersion >/dev/null 2>&1
-        #wget --header="Cache-Control: no-cache, no-store, max-age=0, must-revalidate" --header="Pragma: no-cache" --header="Expires: -1" --output-document=modrinth.txt --no-clobber --no-dns-cache --inet4-only --no-cache --no-cookies --no-check-certificate --recursive $ListModrinth >/dev/null 2>&1
-        #wget --header="Cache-Control: no-cache, no-store, max-age=0, must-revalidate" --header="Pragma: no-cache" --header="Expires: -1" --output-document=curseforge.txt --no-clobber --no-dns-cache --inet4-only --no-cache --no-cookies --no-check-certificate --recursive $ListCurseforge >/dev/null 2>&1
+    echo "  * Update Datas"
+    mkdir -p ./datas >/dev/null 2>&1
+    cd ./datas/
+        rm -f ./datas.zip >/dev/null 2>&1
         DownloadRemoteFile $ListVersion version.txt
         DownloadRemoteFile $ListModrinth modrinth.txt
         DownloadRemoteFile $ListCurseforge curseforge.txt
     cd ..
 }
 
-# Prepare modules for Zogg profile
-function PrepareModules() {
-    while read -r line
-        do
-          InstallInProfile $line
-        done < datas/modrinth.txt
-    while read -r line
-        do
-          InstallInProfile $line
-        done < datas/curseforge.txt
-}
-
 # Add specified module in profile
 function InstallInProfile() {
-    tools/ferium add --dependencies required $1
+    MOD=$1
+    echo "      - Add to profile $ProfileName: $MOD"
+    ./tools/ferium add --dependencies required $MOD
+}
+
+# Prepare modules for Zogg profile
+function PrepareModules() {
+    echo "  * Prepare modules"
+    while read -r line
+    do
+        InstallInProfile $line
+    done < ./datas/modrinth.txt
+    while read -r line
+    do
+        InstallInProfile $line
+    done < ./datas/curseforge.txt
 }
 
 # Download modules
 function InstallModules() {
-    tools/ferium upgrade
+    echo "  * Install modules"
+    ./tools/ferium upgrade
 }
 
 # Display modules
 function DisplayModules() {
-    tools/ferium list > ../mods.log
-    tools/ferium list
+    echo "  * Display installed modules"
+    ./tools/ferium list > ../mods.log
+    ./tools/ferium list
 }
 
 DisplayHeader
-echo   - Mise à jour de Ferium
-echo
 UpdateFerium
 
-# Set execute permissions
-chmod +x tools/ferium >/dev/null 2>&1
-
 DisplayHeader
-echo   - Mise à jour des informations
-echo
 UpdateDatas
 MinecraftVersion=$(cat datas/version.txt)
 
 DisplayHeader
-tools/ferium profile list >/dev/null 2>&1
+./tools/ferium profile list >/dev/null 2>&1
 RETURN=$?
 if [ $RETURN -eq 1 ]; then
-    echo   - Création du profile Zogg
     CreateProfile
 else
-    echo   - Recréation du profile Zogg
     DeleteProfile
     CreateProfile
 fi
 
 DisplayHeader
-echo   - Préparation des modules
-echo
 PrepareModules
 sleep 10
 
 DisplayHeader
-echo   - Installation, ou mise à jour, des modules
-echo
 InstallModules
 sleep 10
 
 DisplayHeader
-echo   - Resumé des modules installés
-echo
 DisplayModules
 
 echo
-echo   - Fabric Mods Mount: $FabricFolder
+echo "  * Fabric Mods Mount: $FabricFolder"
 echo
 
 sleep 30
