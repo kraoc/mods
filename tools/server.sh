@@ -7,7 +7,7 @@ HOSTNAME=$(hostname)
 SELF=$(realpath $0)
 SCRIPT=$(basename $SELF)
 CWD=$(dirname $SELF)
-LOGFILE=mods.log
+LOGFILE=../mods.log
 
 cd $CWD
 
