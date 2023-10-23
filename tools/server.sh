@@ -1,12 +1,13 @@
 #!/bin/bash
 doBuildSystem() {
-	echo "v2023-10-04"
+	echo "v2023-10-23"
 }
 
 HOSTNAME=$(hostname)
 SELF=$(realpath $0)
 SCRIPT=$(basename $SELF)
 CWD=$(dirname $SELF)
+LOGFILE=mods.log
 
 cd $CWD
 
@@ -43,6 +44,10 @@ ListCurseforge=https://github.com/kraoc/mods/raw/main/lists/server_curseforge.tx
 FeriumApp=https://github.com/kraoc/mods/raw/main/tools/ferium
 
 FabricFolder=/opt/docker/pterodactyl/mounts/fabric
+
+if [ -f $LOGFILE ]; then
+    rm -rf $LOGFILE
+fi
 
 # Script display header
 function DisplayHeader() {
@@ -127,15 +132,15 @@ function InstallModules() {
 # Display modules
 function DisplayModules() {
     echo "  * Display installed modules"
-    ./tools/ferium list > ../mods.log
+    ./tools/ferium list >> ../mods.log
     ./tools/ferium list
 }
 
 DisplayHeader
-UpdateFerium
+UpdateFerium  > >(tee -a $LOGFILE) 2>&1
 
 DisplayHeader
-UpdateDatas
+UpdateDatas  > >(tee -a $LOGFILE) 2>&1
 MinecraftVersion=$(cat datas/version.txt)
 
 DisplayHeader
@@ -149,15 +154,15 @@ else
 fi
 
 DisplayHeader
-PrepareModules
+PrepareModules  > >(tee -a $LOGFILE) 2>&1
 sleep 10
 
 DisplayHeader
-InstallModules
+InstallModules  > >(tee -a $LOGFILE) 2>&1
 sleep 10
 
 DisplayHeader
-DisplayModules
+DisplayModules  > >(tee -a $LOGFILE) 2>&1
 
 echo
 echo "  * Fabric Mods Mount: $FabricFolder"
