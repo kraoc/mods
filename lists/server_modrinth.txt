@@ -5,6 +5,7 @@ bluemap
 bmarker
 c2me-fabric
 carpet
+carpet-ams-addition
 chunky
 cloth-config
 collective
@@ -21,9 +22,12 @@ fabricproxy-lite
 fallingtree
 ferrite-core
 gotta-go-fast-fabric
+highspeed-rail
+hopper-the-hedgehog
 inventory-totem
 jamlib
 journeymap
+journeymap-integration
 krypton
 lazydfu
 lithium
@@ -39,8 +43,10 @@ servercore
 silk
 spark
 starlight
+threadtweak
 tree-harvester
 universal-graves
 vmp-fabric
 waystones
+worldedit
 yacl
