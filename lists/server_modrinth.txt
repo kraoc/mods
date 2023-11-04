@@ -1,4 +1,5 @@
 alternate-current
+architectury-api
 async-locator
 balm
 bluemap
