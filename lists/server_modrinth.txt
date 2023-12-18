@@ -5,6 +5,7 @@ bluemap
 c2me-fabric
 chunky
 cloth-config
+clumps
 collective
 commandaliases
 debugify
